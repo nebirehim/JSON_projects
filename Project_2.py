@@ -1,9 +1,7 @@
 from Project_1 import Stock, Trade, activity, CustomEncoder
-from json import JSONEncoder, JSONDecoder,dumps, loads
+from json import JSONEncoder, JSONDecoder, dumps, loads
 from datetime import date, datetime
 from decimal import Decimal
-
-
 
 encoded = dumps(activity, cls=CustomEncoder, indent=2)
 print(encoded)
@@ -20,7 +18,6 @@ def decode_stock(d):
               Decimal(d['close']),
               int(d['volume']))
     return s
-
 
 s = decode_stock({
       "symbol": "AAPL",
@@ -67,14 +64,13 @@ def decode_financials(d):
     return d 
 
 decode_financials({
-      "symbol": "AAPL",
-      "date": "2018-11-22",
-      "open": "176.66",
-      "high": "177.25",
-      "low": "176.64",
-      "close": "176.78",
-      "volume": 3699184,
-      "object": "Stock"
+      "symbol": "TSLA",
+      "timestamp": "2018-11-22T10:05:12",
+      "order": "buy",
+      "price": "338.25",
+      "volume": 100,
+      "commission": "9.99",
+      "object": "Trade"
     })
 
 class CustomDecoder(JSONDecoder):
@@ -94,6 +90,4 @@ class CustomDecoder(JSONDecoder):
                 obj[index] = self.parse_financials(item)
         return obj
     
-
 decoded = loads(encoded, cls=CustomDecoder)
-
