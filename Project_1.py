@@ -20,10 +20,7 @@ class Stock:
                     low=self.low,
                     close=self.close,
                     volume=self.volume)
-<<<<<<< HEAD
-    
-=======
->>>>>>> 267982d (modified)
+
     def __eq__(self, other):
         return isinstance(other, Stock) and self.as_dict() == other.as_dict()
         
@@ -47,9 +44,6 @@ class Trade:
 
     def __eq__(self, other):
             return isinstance(other, Trade) and self.as_dict() == other.as_dict()
-    
-    def __eq__(self, other):
-        return isinstance(other, Trade) and self.as_dict() == other.as_dict()
     
 
 activity = {
