@@ -84,3 +84,4 @@ result = dumps(activity, cls=CustomEncoder, indent=2)
 #this is second commit
 type(result)
 print(result)
+#This is new commit
