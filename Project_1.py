@@ -79,4 +79,4 @@ class CustomEncoder(JSONEncoder):
             super().default(obj)
 
 result = dumps(activity, cls=CustomEncoder, indent=2)
-print(result)
+#This is new commit
