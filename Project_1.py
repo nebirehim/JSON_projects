@@ -80,3 +80,4 @@ class CustomEncoder(JSONEncoder):
 
 result = dumps(activity, cls=CustomEncoder, indent=2)
 #This will be last commit message
+print(result)
